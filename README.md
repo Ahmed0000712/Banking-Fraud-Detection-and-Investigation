@@ -112,14 +112,6 @@ fraud-investigation/
 │       └── cases.py              # cases + evidence
 │
 ├── api/                          # FastAPI backend
-│   ├── main.py                   # creates the app, loads models at startup
-│   ├── schemas.py                # request/response formats (Pydantic)
-│   └── routes/
-│       ├── fraud.py              # use case 1 endpoints
-│       ├── account.py            # use case 2 endpoints
-│       ├── patterns.py           # use case 3 endpoints
-│       ├── relationships.py      # use case 4 endpoints
-│       └── investigation.py      # use case 5 endpoints
 │
 ├── dashboard/
 │   └── app.py                    # Streamlit UI
