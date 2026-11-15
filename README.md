@@ -120,7 +120,7 @@ fraud-investigation/
     └── eda.ipynb
 ```
 
-## Data Model
+## Data Set
 
 **Customer:** `CustomerID`, `CustomerName`, `Age`, `City`
 
