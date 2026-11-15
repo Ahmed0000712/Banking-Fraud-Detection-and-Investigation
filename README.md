@@ -1,4 +1,4 @@
-# AI-Powered Banking Fraud Investigation Platform
+# Banking Fraud Investigation Platform
 
 A human-in-the-loop platform that helps bank investigators analyze suspicious customer activity, review evidence, and generate investigation reports. Built on synthetic banking data.
 
