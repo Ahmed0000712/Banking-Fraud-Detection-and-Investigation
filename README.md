@@ -105,7 +105,7 @@ fraud-investigation/
 │   │
 │   ├── investigation_report/     # Use case 5
 │   │   ├── tools.py              # LangChain tools (one per module above)
-│   │   └── report_generator.py   # evidence -> GPT -> report
+│   │   └── report_generator.py   # evidence -> GPT -> report.
 │   │
 │   └── database/
 │       ├── db.py                 # SQLite setup
