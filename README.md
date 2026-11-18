@@ -6,17 +6,6 @@ Most fraud systems stop at a fraud score. This project combines multiple fraud s
 
 All modules share the same `CustomerID` and `AccountID`, so one customer can be investigated across every fraud scenario in one workflow.
 
-## Current Progress
-
-Work so far is done in Jupyter notebooks. Code will move into Python modules later.
-
-| Part | Notebook | Status |
-|---|---|---|
-| Synthetic data generator | `generate.ipynb` | Done |
-| Data validation and quality checks | `quality.ipynb` | Done |
-| Use case 1: Random Forest + SHAP | `fraud_detection.ipynb` | In progress |
-| Use cases 2 to 5, database, API, dashboard | - | Planned |
-
 ## Use Cases
 
 ### 1. Transaction Fraud Detection
