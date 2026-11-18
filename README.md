@@ -92,7 +92,7 @@ Banking Fraud Investigation/
 │   ├── answer_key/answer_key.csv
 │   ├── raw/                   # customers, accounts, transactions, login_activity
 │   └── generate.ipynb         # creates the data
-├── quality.ipynb              # data checks
+├── Data_Quality.ipynb              # data checks
 └── fraud_detection.ipynb      # Random Forest + SHAP
 ```
 
