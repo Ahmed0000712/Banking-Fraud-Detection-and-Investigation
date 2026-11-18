@@ -108,8 +108,8 @@ Python, Pandas, NumPy, Faker Â· scikit-learn (Random Forest, Isolation Forest) Â
 
 ## Roadmap
 
-- [x] Synthetic data generator
-- [x] Data validation and quality checks
+- [ ] Synthetic data generator
+- [ ] Data validation and quality checks
 - [ ] Use case 1: Random Forest fraud model with SHAP *(in progress)*
 - [ ] Use case 2: Isolation Forest takeover model
 - [ ] Use case 3: Transaction pattern features
