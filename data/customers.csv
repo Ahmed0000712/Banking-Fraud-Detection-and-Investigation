@@ -1,0 +1,101 @@
+﻿CustomerID,CustomerName,Age,Occupation,MonthlyIncomeINR,HomeCity,PreferredPaymentMethod,PrimaryDeviceID
+CUST001,Aryan Maharaj,61,Financial risk analyst,54184,Hyderabad,Credit Card,DEV-CUST001-01
+CUST002,Liam Chaudry,38,Sports administrator,89196,Chennai,NEFT,DEV-CUST002-01
+CUST003,Pahal Balay,68,Air traffic controller,51868,Lucknow,Credit Card,DEV-CUST003-01
+CUST004,Tejas Kaul,55,Risk analyst,47790,Kochi,RTGS,DEV-CUST004-01
+CUST005,Rushil Saini,23,English as a second language teacher,32811,Mumbai,NEFT,DEV-CUST005-01
+CUST006,Arunima Ahuja,35,"Designer, jewellery",157475,Kochi,UPI,DEV-CUST006-01
+CUST007,Harini Mall,56,"Designer, furniture",77124,Indore,Credit Card,DEV-CUST007-01
+CUST008,Gayathri Chaudry,65,Chief Executive Officer,167853,Kolkata,NEFT,DEV-CUST008-01
+CUST009,Gunbir Parmer,49,Local government officer,179472,Delhi,UPI,DEV-CUST009-01
+CUST010,Caleb Sharaf,69,Software engineer,236240,Bengaluru,Credit Card,DEV-CUST010-01
+CUST011,Kritika Brar,48,Sub,114194,Delhi,NEFT,DEV-CUST011-01
+CUST012,Janaki Handa,34,Building control surveyor,225145,Pune,UPI,DEV-CUST012-01
+CUST013,Vedant Mann,26,Cartographer,124595,Mumbai,IMPS,DEV-CUST013-01
+CUST014,Harrison Rai,43,Health physicist,183263,Delhi,UPI,DEV-CUST014-01
+CUST015,Janya Gaba,67,Metallurgist,145435,Ahmedabad,UPI,DEV-CUST015-01
+CUST016,Shaurya Loke,45,Building surveyor,45656,Ahmedabad,IMPS,DEV-CUST016-01
+CUST017,Yash Gade,61,"Psychologist, counselling",187141,Pune,Debit Card,DEV-CUST017-01
+CUST018,Anamika Kanda,33,"Journalist, broadcasting",209699,Mumbai,UPI,DEV-CUST018-01
+CUST019,Veer Balay,63,Interpreter,84742,Delhi,UPI,DEV-CUST019-01
+CUST020,Amrita Bhatti,35,"Engineer, mining",51476,Kolkata,IMPS,DEV-CUST020-01
+CUST021,Simon Tata,50,Occupational hygienist,191640,Pune,NEFT,DEV-CUST021-01
+CUST022,Luke Lanka,44,Corporate treasurer,118132,Chennai,Credit Card,DEV-CUST022-01
+CUST023,Adya Sangha,38,Television production assistant,208977,Lucknow,Credit Card,DEV-CUST023-01
+CUST024,Janaki Kanda,25,Corporate investment banker,184680,Lucknow,NEFT,DEV-CUST024-01
+CUST025,Gavin Batta,55,Clinical molecular geneticist,216136,Chennai,NEFT,DEV-CUST025-01
+CUST026,Nathaniel Sami,50,"Therapist, occupational",124471,Delhi,Credit Card,DEV-CUST026-01
+CUST027,Lekha Raj,65,"Therapist, occupational",171001,Chennai,Credit Card,DEV-CUST027-01
+CUST028,Zayan Apte,41,Colour technologist,245948,Hyderabad,NEFT,DEV-CUST028-01
+CUST029,Harini Choudhury,23,Hospital doctor,236037,Pune,RTGS,DEV-CUST029-01
+CUST030,Nakul Setty,38,"Accountant, chartered certified",42350,Chennai,Debit Card,DEV-CUST030-01
+CUST031,Xiti Gokhale,66,"Runner, broadcasting/film/video",107490,Chennai,Credit Card,DEV-CUST031-01
+CUST032,Chanchal Tripathi,52,Transport planner,128712,Lucknow,RTGS,DEV-CUST032-01
+CUST033,Michael Prakash,30,"Designer, television/film set",94436,Bengaluru,NEFT,DEV-CUST033-01
+CUST034,Ekiya Suresh,68,Advertising account executive,172159,Ahmedabad,IMPS,DEV-CUST034-01
+CUST035,Janani Mohanty,68,Film/video editor,178245,Kolkata,Debit Card,DEV-CUST035-01
+CUST036,Wridesh Brar,46,Chartered certified accountant,119895,Chennai,NEFT,DEV-CUST036-01
+CUST037,Ekapad Walia,53,Comptroller,154372,Mumbai,UPI,DEV-CUST037-01
+CUST038,Vaishnavi Gandhi,28,Geochemist,65066,Lucknow,NEFT,DEV-CUST038-01
+CUST039,Siddharth Zacharia,64,"Engineer, control and instrumentation",135666,Kochi,UPI,DEV-CUST039-01
+CUST040,Mohini Prakash,45,Primary school teacher,125039,Kochi,RTGS,DEV-CUST040-01
+CUST041,Jai Kota,54,Equality and diversity officer,90906,Ahmedabad,UPI,DEV-CUST041-01
+CUST042,Hamsini Bail,64,Theatre stage manager,213932,Mumbai,Credit Card,DEV-CUST042-01
+CUST043,Thomas Amble,55,Building services engineer,221838,Delhi,Credit Card,DEV-CUST043-01
+CUST044,Veer Bir,42,Ambulance person,54242,Delhi,RTGS,DEV-CUST044-01
+CUST045,Ekavir Varkey,31,Field seismologist,143940,Hyderabad,Credit Card,DEV-CUST045-01
+CUST046,Vedika Kala,67,"Solicitor, Scotland",94045,Ahmedabad,NEFT,DEV-CUST046-01
+CUST047,Urvashi Kibe,53,Public librarian,52894,Lucknow,IMPS,DEV-CUST047-01
+CUST048,Ranveer Chandra,61,Chief Strategy Officer,158080,Kochi,NEFT,DEV-CUST048-01
+CUST049,Irya Sampath,30,Paediatric nurse,123019,Bengaluru,Debit Card,DEV-CUST049-01
+CUST050,Chatura Chaudhari,70,"Biochemist, clinical",164029,Hyderabad,Debit Card,DEV-CUST050-01
+CUST051,Harinakshi Chopra,41,Fish farm manager,153085,Hyderabad,UPI,DEV-CUST051-01
+CUST052,Ranveer Yadav,44,"Production assistant, radio",243016,Delhi,NEFT,DEV-CUST052-01
+CUST053,Pahal Goswami,24,Health promotion specialist,88143,Kochi,UPI,DEV-CUST053-01
+CUST054,Zaid Borra,26,Probation officer,216865,Jaipur,UPI,DEV-CUST054-01
+CUST055,Chandresh Zachariah,69,"Administrator, local government",164645,Bengaluru,NEFT,DEV-CUST055-01
+CUST056,Warjas Ganesan,63,Optometrist,149592,Ahmedabad,NEFT,DEV-CUST056-01
+CUST057,Vasana Kala,37,Oncologist,163326,Kochi,RTGS,DEV-CUST057-01
+CUST058,Nitesh Raghavan,34,"Accountant, chartered",166373,Indore,Credit Card,DEV-CUST058-01
+CUST059,Alka Sha,33,Higher education lecturer,211895,Delhi,RTGS,DEV-CUST059-01
+CUST060,Vidhi Dubey,63,Energy manager,195361,Pune,RTGS,DEV-CUST060-01
+CUST061,Teerth Bhardwaj,54,TEFL teacher,143354,Mumbai,NEFT,DEV-CUST061-01
+CUST062,Dipta Bhandari,35,Arts administrator,41784,Pune,UPI,DEV-CUST062-01
+CUST063,Yadavi Wali,58,"Designer, industrial/product",170207,Chennai,Debit Card,DEV-CUST063-01
+CUST064,Yashoda Buch,35,Electronics engineer,26885,Mumbai,Credit Card,DEV-CUST064-01
+CUST065,Ekansh Keer,61,Operations geologist,40433,Chennai,UPI,DEV-CUST065-01
+CUST066,Yatin Baral,23,Water quality scientist,111619,Mumbai,Debit Card,DEV-CUST066-01
+CUST067,Oni Virk,36,Interpreter,98001,Lucknow,RTGS,DEV-CUST067-01
+CUST068,Samarth Murthy,34,Field trials officer,166356,Bengaluru,Credit Card,DEV-CUST068-01
+CUST069,Meghana Deep,57,Hydrologist,176050,Jaipur,NEFT,DEV-CUST069-01
+CUST070,Diya Bora,51,Acupuncturist,236680,Kolkata,NEFT,DEV-CUST070-01
+CUST071,Harish Borah,27,Soil scientist,50409,Lucknow,RTGS,DEV-CUST071-01
+CUST072,Yashawini Lanka,43,Consulting civil engineer,136038,Kolkata,RTGS,DEV-CUST072-01
+CUST073,Ekapad Konda,67,Merchant navy officer,39200,Lucknow,Credit Card,DEV-CUST073-01
+CUST074,Nakul Sarma,62,Speech and language therapist,50799,Hyderabad,RTGS,DEV-CUST074-01
+CUST075,Abhiram Mistry,67,Civil Service administrator,113946,Mumbai,NEFT,DEV-CUST075-01
+CUST076,Aishani D’Alia,33,Clinical biochemist,74862,Ahmedabad,RTGS,DEV-CUST076-01
+CUST077,Anita Manda,29,Trade union research officer,135593,Bengaluru,IMPS,DEV-CUST077-01
+CUST078,Hemal Jani,50,"Geneticist, molecular",90485,Mumbai,RTGS,DEV-CUST078-01
+CUST079,Zayan Behl,56,Chief Executive Officer,50666,Hyderabad,Credit Card,DEV-CUST079-01
+CUST080,Aradhana Basu,55,"Accountant, chartered certified",244159,Hyderabad,UPI,DEV-CUST080-01
+CUST081,Kalpit Lala,69,"Designer, television/film set",247480,Chennai,NEFT,DEV-CUST081-01
+CUST082,Prisha Andra,47,Clinical research associate,152307,Jaipur,NEFT,DEV-CUST082-01
+CUST083,Manthan Banik,46,Merchant navy officer,40370,Bengaluru,RTGS,DEV-CUST083-01
+CUST084,Qushi Datta,21,Architectural technologist,127346,Delhi,RTGS,DEV-CUST084-01
+CUST085,Janya Baral,39,Materials engineer,135888,Indore,Credit Card,DEV-CUST085-01
+CUST086,Zaid Chauhan,56,Manufacturing systems engineer,198505,Indore,RTGS,DEV-CUST086-01
+CUST087,Mohammed Khalsa,30,"Designer, textile",74780,Delhi,NEFT,DEV-CUST087-01
+CUST088,Nitara Bakshi,24,Editorial assistant,176828,Indore,Debit Card,DEV-CUST088-01
+CUST089,Nisha Kothari,24,"Geologist, engineering",221077,Pune,UPI,DEV-CUST089-01
+CUST090,Hritik Raja,24,Arboriculturist,178138,Jaipur,Debit Card,DEV-CUST090-01
+CUST091,Tristan Iyengar,54,Psychiatrist,66270,Hyderabad,Debit Card,DEV-CUST091-01
+CUST092,Dalaja Kari,26,Environmental health practitioner,248174,Bengaluru,UPI,DEV-CUST092-01
+CUST093,Reyansh Rastogi,59,Land/geomatics surveyor,42815,Lucknow,NEFT,DEV-CUST093-01
+CUST094,Ekaraj Mallick,46,Make,56427,Kochi,NEFT,DEV-CUST094-01
+CUST095,Garima Bala,58,Commercial art gallery manager,180849,Hyderabad,Debit Card,DEV-CUST095-01
+CUST096,Pranav Lanka,26,Arboriculturist,134897,Lucknow,Debit Card,DEV-CUST096-01
+CUST097,Radha Pai,57,Interior and spatial designer,162044,Pune,IMPS,DEV-CUST097-01
+CUST098,Yasti D’Alia,34,Musician,200564,Indore,IMPS,DEV-CUST098-01
+CUST099,Aachal Basu,36,Press photographer,94629,Kolkata,NEFT,DEV-CUST099-01
+CUST100,Zinal Yohannan,63,"Engineer, chemical",194214,Delhi,RTGS,DEV-CUST100-01
