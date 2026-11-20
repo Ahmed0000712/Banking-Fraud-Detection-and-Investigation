@@ -1,45 +1,49 @@
 # Banking Fraud Detection and Investigation
 
+A machine learning-based banking fraud detection proof of concept using synthetic Indian banking transactions. The project covers data generation, fraud detection, model evaluation, API-based predictions and an investigation dashboard with AI-assisted explanations.
+
 ## Project Overview
 
-This project develops a machine learning-based banking fraud detection system to identify potentially fraudulent transactions using synthetic Indian banking data.
+This project identifies potentially fraudulent banking transactions using supervised machine learning.
 
-It uses **Random Forest and XGBoost** to detect suspicious transactions and **FastAPI** to serve predictions through an API.
+It compares Random Forest and XGBoost models, selects a model using validation results, and serves predictions through FastAPI. A Streamlit dashboard supports customer-level transaction review, while an OpenAI-powered explanation feature helps interpret selected predictions.
 
-The project focuses on realistic transaction patterns, fraud detection, model evaluation and prediction serving.
+**Project scope:** Synthetic-data-based proof of concept, not a production banking fraud detection system.
 
 ## Dataset
 
-A synthetic banking dataset was generated using Python and Faker.
+The project uses Python and Faker to generate synthetic Indian banking data.
 
-| Dataset | Description | Records |
+| File | Description | Records |
 |---|---|---:|
-| `customers.csv` | Customer information | 100 |
-| `accounts.csv` | Customer account information | 100 |
+| `customers.csv` | Customer details | 100 |
+| `accounts.csv` | Account information | 100 |
 | `transactions.csv` | Banking transaction records | 10,000 |
-| `answers.csv` | Actual fraud labels and scenario details | 10,000 |
+| `answers.csv` | Ground-truth fraud labels | 10,000 |
 
 ### Data Characteristics
 
-- 100 unique customers with different names.
-- 100 accounts, with `AccountID` identical to `CustomerID`.
-- 10,000 transactions covering six months.
-- All transactions are domestic Indian transactions in INR.
-- Exactly 100 fraudulent transactions (1% fraud rate).
-- Includes transaction amounts, payment methods, devices, beneficiaries, locations and failed login/payment attempts.
+- 100 unique customers and 100 accounts.
+- Each `AccountID` is identical to its corresponding `CustomerID`.
+- 10,000 transactions covering approximately six months.
+- Domestic transactions only, in INR.
+- 100 fraudulent transactions (1% fraud rate).
+- 9,900 legitimate transactions.
+- Includes devices, beneficiaries, payment methods, locations and failed login/payment attempts.
+- Includes unusual but legitimate transactions to make detection more realistic.
 
 ### Fraud Scenarios
 
-The dataset contains four simulated fraud scenarios, with 25 fraudulent transactions per scenario.
+The dataset includes four simulated fraud scenarios, with 25 fraudulent transactions per scenario.
 
-1. **Account Takeover:** Unauthorized account access following suspicious login attempts.
-2. **Rapid Fund Transfers:** Multiple transfers to different beneficiaries within a short period.
-3. **Card Testing:** Repeated failed card payment attempts followed by successful purchases.
-4. **Social Engineering:** Multiple payments to a newly added beneficiary following a scam.
+| Scenario | Description |
+|---|---|
+| Account Takeover | Unauthorized account activity following suspicious login attempts. |
+| Rapid Fund Transfers | Multiple transfers to different beneficiaries within a short period. |
+| Card Testing | Repeated failed card payment attempts followed by successful purchases. |
+| Social Engineering | Payments to a newly added beneficiary following a scam. |
 
-Each scenario contains five separate fraud cases, with five related fraudulent transactions per case.
-
-The dataset also includes legitimate unusual transactions to make fraud detection less dependent on obvious patterns.
+Each scenario contains five fraud cases, with five related fraudulent transactions per case.
 
 ### Ground-Truth Labels
 
@@ -50,30 +54,37 @@ The dataset also includes legitimate unusual transactions to make fraud detectio
 - `FraudCaseID`
 - `FraudScenario`
 
-The answer key is kept separate from model input features. Test labels are hidden during prediction and used only afterward to evaluate model performance.
+These labels are kept separate from the model's prediction features. They are used as training targets and for evaluating predictions against the actual outcomes.
 
 ## Machine Learning Approach
 
-Two supervised machine learning algorithms are trained and compared:
+Two supervised machine learning models are trained and compared:
 
 - Random Forest
 - XGBoost
 
-### Workflow
+### Model Workflow
 
-1. Load and validate the generated datasets.
-2. Perform feature engineering.
-3. Prepare numerical and categorical features.
-4. Split the data into training, validation and test sets.
-5. Train Random Forest and XGBoost.
-6. Compare model performance using validation data.
-7. Select the model and decision threshold using validation results.
-8. Predict on unseen test transactions.
-9. Compare predictions against actual test labels.
+1. Generate and validate the datasets.
+2. Prepare transaction and customer features.
+3. Perform feature engineering.
+4. Split data into training, validation and testing sets.
+5. Train Random Forest and XGBoost pipelines.
+6. Compare models using validation results.
+7. Select the model and decision threshold using validation data.
+8. Evaluate the selected model on the held-out test data.
+
+The split is chronological and group-based, keeping transactions from the same fraud case together.
+
+| Dataset | Transactions | Fraud Transactions |
+|---|---:|---:|
+| Training | 6,992 | 60 |
+| Validation | 1,504 | 20 |
+| Testing | 1,504 | 20 |
 
 ### Evaluation Metrics
 
-The models are evaluated using:
+The project evaluates models using:
 
 - Precision
 - Recall
@@ -82,28 +93,91 @@ The models are evaluated using:
 - PR-AUC (Average Precision)
 - Confusion Matrix
 
-Because fraud represents only 1% of the generated transactions, accuracy alone is not used to judge model performance.
+Accuracy alone is not sufficient because fraud represents only 1% of the generated data.
+
+### Recorded Test Results
+
+The current evaluation notebook records the following results for the selected XGBoost model:
+
+| Metric | Test Result |
+|---|---:|
+| Selected Model | XGBoost |
+| Decision Threshold | 0.12 |
+| Precision | 0.50 |
+| Recall | 0.65 |
+| F1 Score | 0.565 |
+| F2 Score | 0.613 |
+| PR-AUC | 0.698 |
+
+**Confusion Matrix**
+
+| Actual / Predicted | Legitimate | Fraud |
+|---|---:|---:|
+| Legitimate | 1,471 | 13 |
+| Fraud | 7 | 13 |
+
+These are results from the currently saved notebook run. They may change when the synthetic dataset is regenerated.
 
 ## FastAPI Integration
 
-The selected trained model is integrated with FastAPI to provide transaction fraud predictions.
+The selected trained model is served through FastAPI.
 
 | Method | Endpoint | Purpose |
 |---|---|---|
-| GET | `/health` | Checks API availability |
-| GET | `/model-info` | Returns selected model information |
-| POST | `/predict` | Predicts whether a transaction is fraudulent or legitimate |
+| GET | `/health` | Checks API availability. |
+| GET | `/model-info` | Returns model information and decision threshold. |
+| POST | `/predict` | Predicts whether a transaction is fraudulent or legitimate. |
+| POST | `/explain` | Returns the ML prediction with an AI-generated explanation. |
 
-The prediction response includes the predicted class, fraud probability, decision threshold and selected model.
+The prediction response includes:
+
+- Predicted class
+- Fraud probability
+- Decision threshold
+- Selected model
+
+API documentation is available at:
+
+`http://127.0.0.1:8000/docs`
+
+## Streamlit Investigation Dashboard
+
+The Streamlit dashboard provides an interface for reviewing customer transactions.
+
+Key features:
+
+- Search for a customer by ID.
+- View customer and account information.
+- Review transaction history.
+- See fraud probabilities and model predictions.
+- Filter flagged transactions.
+- Select a transaction to request an AI-generated explanation.
+
+The dashboard also displays the ground-truth scenario for checking predictions in this proof of concept.
+
+## AI-Powered Explanation
+
+The project includes an OpenAI-powered explanation feature.
+
+It uses the ML prediction and selected transaction details to:
+
+- Explain why a transaction was flagged.
+- Identify suspicious indicators.
+- Suggest practical investigation steps.
+
+The AI explanation does not change the ML prediction and does not treat a flagged transaction as proven fraud.
+
+An OpenAI API key is required for this feature. The core ML prediction API can run without it.
 
 ## Project Structure
 
 ```text
-Banking-Fraud-Detection/
+Banking-Fraud-Detection-and-Investigation/
 │
 ├── app/
-│   ├── __init__.py
-│   └── api.py
+│   ├── api.py
+│   ├── dashboard.py
+│   └── gpt_explainer.py
 │
 ├── data/
 │   ├── customers.csv
@@ -115,19 +189,119 @@ Banking-Fraud-Detection/
 │   ├── fraud_model.joblib
 │   └── test_data.joblib
 │
-├── notebooks/
-│   ├── 02_data_validation.ipynb
-│   ├── 03_model_training.ipynb
-│   └── 04_model_evaluation.ipynb
-│
 ├── src/
-│   └── generate_data.py
+│   ├── generate_data.py
+│   ├── validate_data.ipynb
+│   ├── model_training.ipynb
+│   └── model_evaluation.ipynb
 │
 ├── requirements.txt
 ├── .gitignore
 └── README.md
 ```
 
+## Setup and Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Ahmed0000712/Banking-Fraud-Detection-and-Investigation.git
+cd Banking-Fraud-Detection-and-Investigation
+```
+
+### 2. Create a Python environment (recommended)
+
+Windows CMD:
+
+```cmd
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+### 3. Install dependencies
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### 4. Generate the dataset
+
+```bash
+python src/generate_data.py
+```
+
+This generates the four CSV files inside the `data/` directory. Running it again regenerates those files.
+
+## Running the Notebooks
+
+Open the project in VS Code or Jupyter Notebook and run these notebooks in order:
+
+1. `src/validate_data.ipynb`
+2. `src/model_training.ipynb`
+3. `src/model_evaluation.ipynb`
+
+The training notebook saves the selected model and test data inside `models/`.
+
+Run the training notebook before starting the API if the required model artifacts are not already available.
+
+## Running the Application
+
+### 1. Start FastAPI
+
+From the project root:
+
+```bash
+python -m uvicorn app.api:app --reload
+```
+
+Open the API documentation:
+
+`http://127.0.0.1:8000/docs`
+
+### 2. Start the Streamlit dashboard
+
+Open a second terminal, activate the same Python environment, and run:
+
+```bash
+streamlit run app/dashboard.py
+```
+
+### 3. Configure the OpenAI explanation feature
+
+Create a `.env` file in the project root:
+
+```env
+OPENAI_API_KEY=your_openai_api_key
+OPENAI_MODEL=your_available_model
+```
+
+`OPENAI_MODEL` is optional and can be used to configure the model available to your API account.
+
+Keep your API key private. Never commit the `.env` file to GitHub.
+
+## Technologies Used
+
+- **Python** – Main programming language.
+- **Pandas** – Data handling and processing.
+- **Scikit-learn** – Preprocessing and Random Forest.
+- **XGBoost** – Gradient boosting model.
+- **Faker** – Synthetic customer data generation.
+- **Joblib** – Model and test-data storage.
+- **FastAPI** – Prediction API.
+- **Streamlit** – Investigation dashboard.
+- **OpenAI API** – AI-assisted prediction explanations.
+- **Jupyter Notebook** – Data validation, model training and evaluation.
+
+## Limitations
+
+- The dataset is synthetic and does not represent actual bank transactions.
+- The dataset is relatively small and contains only 100 customers.
+- Model results on synthetic data do not establish real-world fraud detection performance.
+- The system is a proof of concept and requires further validation, security controls, monitoring and testing before any real banking deployment.
+- A model prediction indicates potential risk; it is not proof of fraud.
+
 ## Project Objective
 
-To develop an understandable end-to-end fraud detection proof of concept that demonstrates synthetic data generation, supervised machine learning, model evaluation and API-based prediction serving.
+This is an educational and portfolio project developed to learn and demonstrate an end-to-end banking fraud detection workflow. It uses synthetic data to practice supervised machine learning, model evaluation, API-based prediction serving and AI-assisted fraud investigation.
+
+The project is intended for learning and skill development, not for deployment in a real banking environment. It demonstrates the practical application of AI and machine learning concepts in a simulated banking use case.
